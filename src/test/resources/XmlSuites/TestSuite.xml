@@ -5,7 +5,7 @@
 
     <test name="Login">
         <classes >
-<!--            <class name="TestTeamDanmark.loginTest.LoginMobileTest" />-->
+            <class name="BoardGovernanceTest.loginTest.LoginTest" />
         </classes>
     </test>
 
