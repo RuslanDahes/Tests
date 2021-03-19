@@ -1,6 +1,7 @@
 package BoardGovernanceTest.loginTest;
 
 import BoardGovernace.loginPage.Login;
+import BoardGovernace.profile.BaseProfile;
 import BoardGovernace.testrailConfig.APIException;
 import BoardGovernace.testrailConfig.TestRails;
 import BoardGovernace.testrailConfig.TestSuiteCreating;
@@ -9,6 +10,7 @@ import BoardGovernanceTest.BaseTest;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -79,4 +81,10 @@ public class LoginTest extends BaseTest {
         TestSuiteCreating.CLIENT.sendPost("add_result_for_case/"+TestSuiteCreating.TEST_RUN+"/"+caseId,data);
     }
 
+    @AfterClass
+    public void Logout() {
+        BaseProfile baseProfile = new BaseProfile(getDriver());
+        if (!getDriver().getCurrentUrl().equals(Links.STAGE_BASIC_URL + Links.LOGIN_URL))
+            baseProfile.logout();
+    }
 }
