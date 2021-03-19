@@ -2,7 +2,6 @@ package BoardGovernace;
 
 import BoardGovernace.utils.Links;
 import BoardGovernace.utils.Waiters;
-import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -25,7 +24,7 @@ public class BasePage {
 //        open(Links.STAGE_BASIC_URL + page);
 //    }
 
-    public void openURL(String pageUrl) {
-        Selenide.open(Links.STAGE_BASIC_URL + pageUrl);
-    }
+//    public void openURL(String pageUrl) {
+//        Selenide.open(Links.STAGE_BASIC_URL + pageUrl);
+//    }
 }
