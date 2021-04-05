@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Test suite">
+    
 
     <test name="Login">
         <classes >
@@ -14,6 +15,16 @@
             <class name="BoardGovernanceTest.profileTest.logoutTest.LogoutTest" />
         </classes>
     </test>
+
+    <test name="Registration">
+        <classes >
+            <class name="BoardGovernanceTest.loginTest.ValidatePasswordTest" />
+            <class name="BoardGovernanceTest.loginTest.RegistrationTest" />
+        </classes>
+    </test>
+
+
+
 
 </suite>
 

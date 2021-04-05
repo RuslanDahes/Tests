@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TestRails(id="86378")
-    @Test (priority = 2)
+    @Test (priority = 3)
     public void succsesLogin() {
         Login login = new Login(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
@@ -44,7 +44,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TestRails(id="86379")
-    @Test
+    @Test (priority = 1)
     public void incorrectPassword() {
         Login login = new Login(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, Texts.PASSWORD_INCORRECT);
@@ -52,7 +52,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TestRails(id="86380")
-    @Test
+    @Test(priority = 1)
     public void incorrectEmail() {
         Login login = new Login(getDriver());
         login.loginUser(Texts.EMAIL_INCORRECT, UserCredentials.PASSWORD_MYKHAIL);
@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TestRails(id="86381")
-    @Test
+    @Test(priority = 1)
     public void incorrectEmailAndPassword() {
         Login login = new Login(getDriver());
         login.loginUser(Texts.EMAIL_INCORRECT, Texts.PASSWORD_INCORRECT);

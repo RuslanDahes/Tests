@@ -6,7 +6,7 @@ public class UserCredentials {
 
 
 
-
+    public static final String PASSWORD_FOR_REGISTRATION = "TestUser1995!";
 
 
 

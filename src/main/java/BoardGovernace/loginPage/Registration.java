@@ -1,6 +1,7 @@
 package BoardGovernace.loginPage;
 
 import BoardGovernace.BasePage;
+import BoardGovernace.utils.UserCredentials;
 import BoardGovernace.utils.Waiters;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 public class Registration extends BasePage {
     public Registration(WebDriver driver) { super(driver); }
@@ -35,13 +37,23 @@ public class Registration extends BasePage {
     @FindBy(className = "form-error-message")
     List<WebElement> errorlist;
     @FindBy(className = "error-list__item")
-    List<WebDriver> passwordVlidationList;
+    List<WebDriver> passwordValidationList;
+    String testRandomEmail;
 
 
+    public String getTestRandomEmail() {
+        return testRandomEmail;
+    }
 
+    public void setTestRandomEmail(String testRandomEmail) {
+        this.testRandomEmail = testRandomEmail;
+    }
 
     public void  fillAllData() {
-        fillFields("FistName", "MiddleName", "SurName", "test123123@test.com", "Test!1234");
+        Random random = new Random();
+        setTestRandomEmail("test" + String.valueOf(random.nextInt(1000000000)) + "@test.com");
+        System.out.println(getTestRandomEmail());
+        fillFields("FistName", "MiddleName", "SurName", getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,conditionsCheckBox);
         Waiters.treadWaiter(1);
