@@ -78,6 +78,7 @@ public class RegistrationTest extends BaseTest {
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(1);
+        registration.payPopup(1);
     }
 
     @TestRails(id="86473")
@@ -88,6 +89,7 @@ public class RegistrationTest extends BaseTest {
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(2);
+        registration.payPopup(2);
     }
 
     @TestRails(id="86474")
@@ -98,7 +100,9 @@ public class RegistrationTest extends BaseTest {
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(3);
+        registration.payPopup(3);
     }
+
 
     @AfterMethod
     public void setTestCase(ITestResult result, ITestContext ctx) throws IOException, APIException {

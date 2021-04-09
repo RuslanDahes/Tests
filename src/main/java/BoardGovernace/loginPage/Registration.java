@@ -3,6 +3,7 @@ package BoardGovernace.loginPage;
 import BoardGovernace.BasePage;
 import BoardGovernace.utils.UserCredentials;
 import BoardGovernace.utils.Waiters;
+import com.sun.deploy.util.Waiter;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Registration extends BasePage {
     public Registration(WebDriver driver) { super(driver); }
@@ -39,6 +41,18 @@ public class Registration extends BasePage {
     @FindBy(className = "error-list__item")
     List<WebDriver> passwordValidationList;
     String testRandomEmail;
+    @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_Logo1")
+    WebElement danishCardIcon;
+    @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_Logo3")
+    WebElement visaCardIcon;
+    @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_Logo4")
+    WebElement masterCardIcon;
+    @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_btnSubmitForm")
+    WebElement completePaymentButton;
+    @FindBy(id = "epay_frame")
+    WebElement frame;
+    @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_epay_payment_return_button")
+    WebElement continueButton;
 
 
     public String getTestRandomEmail() {
@@ -117,5 +131,30 @@ public class Registration extends BasePage {
         Waiters.treadWaiter(1);
         clickCreateButton();
         Waiters.treadWaiter(3);
+    }
+
+    public void payPopup(int typeOfAccount ) {
+        driver.switchTo().frame(frame);
+        Waiters.treadWaiter(2);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+                ,danishCardIcon);
+        Waiters.treadWaiter(1);
+        Waiters.treadWaiter(3);
+        if (typeOfAccount == 1) {
+            danishCardIcon.click();
+            Waiters.treadWaiter(2);
+        }
+        if (typeOfAccount == 2) {
+            visaCardIcon.click();
+            Waiters.treadWaiter(2);
+        }
+        if (typeOfAccount == 3) {
+            masterCardIcon.click();
+            Waiters.treadWaiter(2);
+        }
+        completePaymentButton.click();
+        Waiters.treadWaiter(2);
+        continueButton.click();
+        Waiters.treadWaiter(2);
     }
 }
