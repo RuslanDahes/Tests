@@ -3,7 +3,6 @@ package BoardGovernace.loginPage;
 import BoardGovernace.BasePage;
 import BoardGovernace.utils.UserCredentials;
 import BoardGovernace.utils.Waiters;
-import com.sun.deploy.util.Waiter;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
