@@ -3,10 +3,13 @@ package BoardGovernanceTest.boardsTest;
 import BoardGovernace.boards.CreateBoard;
 import BoardGovernace.loginPage.Login;
 import BoardGovernace.profile.BaseProfile;
+import BoardGovernace.utils.Links;
+import BoardGovernace.utils.Texts;
 import BoardGovernace.utils.UserCredentials;
 import BoardGovernace.utils.Waiters;
 import BoardGovernanceTest.BaseTest;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,12 +22,23 @@ public class CreateBoardTest extends BaseTest {
     }
 
     @Test
-    public void createBoard() {
+    public void createBoardWithTariffMiniStart() {
         CreateBoard createBoard = new CreateBoard(getDriver());
-        createBoard.openPage("/board-login/board-office/opret-bestyrelse");
-//        createBoard.createRequiredBoard();
-        Waiters.treadWaiter(1);
+        createBoard.openPage(Links.CREATE_BOARD_URL);
+        createBoard.createRequiredBoard(Texts.MINI_START_TARIFF);
+        Waiters.treadWaiter(10);
     }
+
+    @Test
+    public void createBoardWithTariffBasic() {
+        CreateBoard createBoard = new CreateBoard(getDriver());
+        createBoard.openPage(Links.CREATE_BOARD_URL);
+        createBoard.createRequiredBoard(Texts.BASIC_TARIFF);
+        Waiters.treadWaiter(10);
+    }
+
+
+
 
     @AfterClass
     public void logout() {

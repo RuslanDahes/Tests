@@ -3,36 +3,39 @@ package BoardGovernace.boards;
 import BoardGovernace.BasePage;
 import BoardGovernace.utils.Texts;
 import BoardGovernace.utils.Waiters;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class CreateBoard extends BasePage {
     public CreateBoard(WebDriver driver) { super(driver); }
-    @FindBy(name = "name")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[1]/div/div[1]/form-input/div/div/div/ng-transclude/input")
     WebElement boardNameField;
-    @FindBy(name = "company")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[1]/div[1]/form-input/div/div/div/ng-transclude/input")
     WebElement companyNameField;
-    @FindBy(name = "cvr")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[2]/div[1]/form-input/div/div/div/ng-transclude/input")
     WebElement cvrField;
-    @FindBy(name = "ean")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[3]/div[1]/form-input/div/div/div/input")
     WebElement eanField;
-    @FindBy(name = "contact")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[1]/div[2]/form-input/div/div/div/input")
     WebElement contactPersonField;
-    @FindBy(name = "sectoralCode")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[2]/div[2]/form-input/div/div/div/ng-transclude/input")
     WebElement sectoralField;
-    @FindBy(name = "address")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[4]/div/form-input/div/div/div/input")
     WebElement addressField;
-    @FindBy(name = "city")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[1]/form-input/div/div/div/input")
     WebElement cityField;
-    @FindBy(name = "zipCode")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[2]/form-input/div/div/div/input")
     WebElement zipCodeField;
-    @FindBy(name = "phone")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[6]/div[1]/form-input/div/div/div/input")
     WebElement phoneField;
-    @FindBy(name = "country")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[3]/form-input/div/div/div/input")
     WebElement countryField;
     @FindBy(name = "email")
     WebElement emailField;
@@ -40,7 +43,7 @@ public class CreateBoard extends BasePage {
     WebElement languageDropDownList;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[3]/div[2]/form-input/div/div/div/ng-transclude/div")
     WebElement employeesContDropDownList;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[2]/div/div/label/input")
+    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[2]/div/div/label")
     WebElement termOfUseCheckBox;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/insurance-terms/div[2]/div/div/label/input")
     WebElement acceptComplianceCheckBox;
@@ -80,18 +83,58 @@ public class CreateBoard extends BasePage {
         fillRequiredFields();
     }
 
-    public void selectTariffAndUserCount(WebElement tariff, WebElement userDropDown) {
-        tariff.click();
+    public void tariffMiniStart() {
+        priceBlocks.get(0).click();
         Waiters.treadWaiter(1);
-        Select userCount = new Select(userDropDown);
+        Select userCount = new Select(miniStartUserCount);
         userCount.selectByVisibleText("4");
         Waiters.treadWaiter(1);
     }
 
-    public void createRequiredBoard(WebElement tariff, WebElement userDropDownTariff) {
+    public void tariffBasic() {
+        priceBlocks.get(1).click();
+        Waiters.treadWaiter(1);
+        Select userCount = new Select(basicUserCount);
+        userCount.selectByVisibleText("4");
+        Waiters.treadWaiter(1);
+    }
+
+    public void tariffElite() {
+        priceBlocks.get(2).click();
+        Waiters.treadWaiter(1);
+        Select userCount = new Select(eliteUserCount);
+        userCount.selectByVisibleText("4");
+        Waiters.treadWaiter(1);
+    }
+
+    public void tariffCorporate() {
+        priceBlocks.get(3).click();
+        Waiters.treadWaiter(1);
+        Select userCount = new Select(corporateUserCount);
+        userCount.selectByVisibleText("4");
+        Waiters.treadWaiter(1);
+    }
+
+
+    public void createRequiredBoard(String nameTariff) {
         fillRequiredFields();
-        selectTariffAndUserCount(tariff, userDropDownTariff);
-        termOfUseCheckBox.click();
+        if (nameTariff.equals(Texts.MINI_START_TARIFF)) {
+            tariffMiniStart();
+        }
+        if (nameTariff.equals(Texts.BASIC_TARIFF)) {
+            tariffBasic();
+        }
+        if (nameTariff.equals(Texts.ELITE_TARIFF)) {
+            tariffCorporate();
+        }
+        if (nameTariff.equals(Texts.CORPORATE_TARIFF)) {
+            tariffElite();
+        }
+        Waiters.treadWaiter(1);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", termOfUseCheckBox);
+        Waiters.treadWaiter(10);
+//        termOfUseCheckBox.click();
         Waiters.treadWaiter(1);
         registrationBoardButton.click();
     }

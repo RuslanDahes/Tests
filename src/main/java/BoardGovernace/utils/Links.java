@@ -4,6 +4,7 @@ public class Links {
     public static final String STAGE_BASIC_URL = "https://www.staging.board-office.dk";
     public static final String LOGIN_URL = "/board-login";
     public static final String BASE_PAGE_URL = "/board-login/board-office/";
+    public static final String CREATE_BOARD_URL = "/board-login/board-office/opret-bestyrelse";
 
 
 
