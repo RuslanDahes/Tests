@@ -5,7 +5,7 @@ public class Links {
     public static final String LOGIN_URL = "/board-login";
     public static final String BASE_PAGE_URL = "/board-login/board-office/";
     public static final String CREATE_BOARD_URL = "/board-login/board-office/opret-bestyrelse";
-
+    public static final String TEST_BOARD_URL = "/board-login/board-office/board/a33eccee-2573-4190-9bcd-c9018a174109/archive";
 
 
 

@@ -20,4 +20,8 @@ public class Texts {
     public static final String BASIC_TARIFF = "Basic";
     public static final String ELITE_TARIFF = "Elite";
     public static final String CORPORATE_TARIFF = "Corporate";
+
+    public static final String TEST_FOLDER = "Test folder";
+    public static final String TEST_EDIT_FOLDER = "Edit folder name";
+    public static final String TEST_EDIT_FOLDER_CANCEL = "Edit folder name cancel";
 }

@@ -11,7 +11,9 @@ import BoardGovernace.utils.Waiters;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
@@ -28,7 +30,7 @@ public class BaseTest {
     BasePage basePage = new BasePage(getDriver());
 
 
-    @BeforeSuite
+    @BeforeClass
     public void openBrowser() throws Exception {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
@@ -72,7 +74,7 @@ public class BaseTest {
 //        Configuration.startMaximized = true;
 //    }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
