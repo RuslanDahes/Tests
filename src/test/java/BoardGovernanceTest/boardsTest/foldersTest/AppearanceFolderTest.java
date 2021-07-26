@@ -1,16 +1,12 @@
 package BoardGovernanceTest.boardsTest.foldersTest;
 
-import BoardGovernace.boards.CreateBoard;
-import BoardGovernace.boards.folders.CreateFolder;
-import BoardGovernace.boards.folders.HideFolder;
+import BoardGovernace.boards.folders.AppearanceFolder;
 import BoardGovernace.loginPage.Login;
 import BoardGovernace.testrailConfig.APIException;
 import BoardGovernace.testrailConfig.TestRails;
 import BoardGovernace.testrailConfig.TestSuiteCreating;
 import BoardGovernace.utils.UserCredentials;
-import BoardGovernace.utils.Waiters;
 import BoardGovernanceTest.BaseTest;
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -23,19 +19,16 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HideFolderTest extends BaseTest {
+public class AppearanceFolderTest extends BaseTest {
     @BeforeClass
     public void login() {
         Login login = new Login(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
-//        createBoard.acceptCookie();
-        CreateFolder createFolder = new CreateFolder(getDriver());
-        createFolder.openBoard();
     }
 
     @BeforeMethod
     public void getTestCase(ITestContext ctx, Method method) throws NoSuchMethodException {
-        Method m = HideFolderTest.class.getMethod(method.getName());
+        Method m = AppearanceFolderTest.class.getMethod(method.getName());
         if (m.isAnnotationPresent(TestRails.class)) {
             TestRails ta = m.getAnnotation(TestRails.class);
             System.out.println(ta.id());
@@ -43,21 +36,43 @@ public class HideFolderTest extends BaseTest {
         }
     }
 
-    @TestRails(id="86807")
-    @Test (priority = 1)
-    public void hideFolderCheck() {
-        HideFolder hideFolder = new HideFolder(getDriver());
-        hideFolder.hideFolder();
-        hideFolder.displayAndHideFolders();
-        Assert.assertTrue(hideFolder.checkHideFolder());
+    @BeforeMethod
+    public void openPage() {
+        AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        appearanceFolder.openBoard();
+        appearanceFolder.openMenuFolder("Appearance");
     }
 
-    @TestRails(id="86808")
-    @Test (priority = 2)
-    public void displayFolderCheck() {
-        HideFolder hideFolder = new HideFolder(getDriver());
-        hideFolder.showFolder();
-        Assert.assertTrue(hideFolder.checkDisplayedFolder());
+    @TestRails(id="86800")
+    @Test
+    public void createBlueFolderFon() {
+        AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        appearanceFolder.selectAppearance();
+        appearanceFolder.changeBlueColorFon();
+    }
+
+    @TestRails(id="86801")
+    @Test
+    public void createGreenFolderFon() {
+        AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        appearanceFolder.selectAppearance();
+        appearanceFolder.changeGreenColorFon();
+    }
+
+    @TestRails(id="86802")
+    @Test
+    public void createBlueFolderIcon() {
+        AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        appearanceFolder.selectAppearance();
+        appearanceFolder.changeBlueIcon();
+    }
+
+    @TestRails(id="86803")
+    @Test
+    public void createGreenFolderIcon() {
+        AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        appearanceFolder.selectAppearance();
+        appearanceFolder.changeGreenIcon();
     }
 
     @AfterMethod

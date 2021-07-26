@@ -23,7 +23,23 @@
         </classes>
     </test>
 
+    <test name="Board">
+        <classes >
+            <class name="BoardGovernanceTest.boardsTest.CreateBoardTest" />
+        </classes>
+    </test>
 
+    <test name="Folder">
+        <classes >
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.CreateFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.RenameFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.HideFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.DeleteFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.MoveFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.AppearanceFolderTest" />
+
+        </classes>
+    </test>
 
 
 </suite>
