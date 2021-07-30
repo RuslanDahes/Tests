@@ -50,7 +50,7 @@ public class DeleteFolderTest extends BaseTest {
 
     @TestRails(id="86804")
     @Test
-    public void DeleteUser() {
+    public void DeleteFolder() {
         DeleteFolder deleteFolder = new DeleteFolder(getDriver());
         deleteFolder.deleteFolder();
         Assert.assertTrue(deleteFolder.checkDeletedFolder());

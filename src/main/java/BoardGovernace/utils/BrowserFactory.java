@@ -2,6 +2,7 @@ package BoardGovernace.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -19,7 +20,9 @@ public class BrowserFactory {
             case FIREFOX:
                 return new FirefoxDriver();
             case CHROMEWEB:
-                return new ChromeDriver();
+                ChromeOptions capability = new ChromeOptions();
+//                capability.addArguments("--headless");
+                return new ChromeDriver(capability);
             case SAFARI:
                 return new SafariDriver();
             default:

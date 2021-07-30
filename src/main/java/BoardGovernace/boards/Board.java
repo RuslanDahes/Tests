@@ -5,7 +5,7 @@ import BoardGovernace.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -17,6 +17,7 @@ public class Board extends BasePage {
     List<WebElement> companyNameList;
     @FindBy(className = "mdi-dots-vertical")
     List<WebElement> verticalDotsList;
+
 
 
 

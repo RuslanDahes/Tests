@@ -5,7 +5,7 @@ import BoardGovernace.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Folder extends Board {
     WebElement createFolderButton;
     @FindBy(name = "folderName")
     List<WebElement> folderNameField;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-folder-create/modal/div/div[2]/div/ng-transclude/form/div/button[2]")
+    @FindBy(xpath = "//*[@id=\"ngdialog1\"]/div[2]/form/div/button[2]")
     WebElement saveFolderButton;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-folder-create/modal/div/div[2]/div/ng-transclude/form/form-input/div/div[2]")
     WebElement errorText;
@@ -26,6 +26,8 @@ public class Folder extends Board {
     List<WebElement> dotsVerticalList;
     @FindBy(className = "modal-close")
     WebElement closePopupButton;
+    @FindBy(className = "icon--color-bg-light-gray")
+    List<WebElement> folderIcon;
 
     public boolean checkFolderInList(String folderName) {
         boolean inList = false;
@@ -46,6 +48,18 @@ public class Folder extends Board {
             }
         }
         dotsVerticalList.get(menuFolderCount).click();
+        Waiters.treadWaiter(1);
+    }
+
+    public void openFolder(String folderName) {
+        int folderCount= 0;
+        for(int i = 0; i<folderList.size(); i++) {
+            if (folderList.get(i).getText().contains(folderName)) {
+                folderCount = i;
+                break;
+            }
+        }
+        folderIcon.get(folderCount).click();
         Waiters.treadWaiter(1);
     }
 }

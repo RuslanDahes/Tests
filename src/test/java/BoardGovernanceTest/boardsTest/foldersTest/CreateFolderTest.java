@@ -46,7 +46,7 @@ public class CreateFolderTest extends BaseTest {
 
     @TestRails(id="86582")
     @Test
-    public void createFolderSuccses() {
+    public void createFolderSuccsess() {
         CreateFolder createFolder = new CreateFolder(getDriver());
         createFolder.createFolder(Texts.TEST_FOLDER);
         Assert.assertTrue(createFolder.checkFolderInList(Texts.TEST_FOLDER));

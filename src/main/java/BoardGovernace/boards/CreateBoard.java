@@ -4,12 +4,12 @@ import BoardGovernace.BasePage;
 import BoardGovernace.utils.Params;
 import BoardGovernace.utils.Texts;
 import BoardGovernace.utils.Waiters;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import java.util.List;
 
