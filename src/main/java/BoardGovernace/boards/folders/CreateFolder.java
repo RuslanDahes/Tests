@@ -16,7 +16,7 @@ public class CreateFolder extends Folder {
         System.out.println(folderNameField.size());
         folderNameField.get(1).sendKeys(folderName);
 //        folderNameField.get(3).sendKeys(folderName);
-        Waiters.treadWaiter(1);
+        Waiters.treadWaiter(2);
         saveFolderButton.click();
         Waiters.treadWaiter(2);
     }

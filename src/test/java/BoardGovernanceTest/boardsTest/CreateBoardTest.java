@@ -25,7 +25,7 @@ public class CreateBoardTest extends BaseTest {
         Login login = new Login(getDriver());
         CreateBoard createBoard = new CreateBoard(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
-        createBoard.acceptCookie();
+//        createBoard.acceptCookie();
     }
 
     @BeforeMethod
@@ -100,10 +100,10 @@ public class CreateBoardTest extends BaseTest {
         TestSuiteCreating.CLIENT.sendPost("add_result_for_case/"+TestSuiteCreating.TEST_RUN+"/"+caseId,data);
     }
 
-    @AfterClass
-    public void logout() {
-        BaseProfile baseProfile = new BaseProfile(getDriver());
-        baseProfile.openPage("");
-        baseProfile.logout();
-    }
+//    @AfterClass
+//    public void logout() {
+//        BaseProfile baseProfile = new BaseProfile(getDriver());
+//        baseProfile.openPage("");
+//        baseProfile.logout();
+//    }
 }

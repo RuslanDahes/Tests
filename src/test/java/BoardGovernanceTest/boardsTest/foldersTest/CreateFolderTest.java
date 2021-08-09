@@ -8,6 +8,7 @@ import BoardGovernace.testrailConfig.TestRails;
 import BoardGovernace.testrailConfig.TestSuiteCreating;
 import BoardGovernace.utils.Texts;
 import BoardGovernace.utils.UserCredentials;
+import BoardGovernace.utils.Waiters;
 import BoardGovernanceTest.BaseTest;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -65,6 +66,8 @@ public class CreateFolderTest extends BaseTest {
     public void createMoreOneFolderWithSameName() {
         CreateFolder createFolder = new CreateFolder(getDriver());
         createFolder.createFolder(Texts.TEST_FOLDER);
+        getDriver().navigate().refresh();
+        Waiters.treadWaiter(3);
         createFolder.createFolder(Texts.TEST_FOLDER);
     }
 

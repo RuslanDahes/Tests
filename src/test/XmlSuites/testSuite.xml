@@ -3,6 +3,12 @@
 
 <suite name="Test suite">
 
+    <test name="Registration">
+        <classes >
+            <class name="BoardGovernanceTest.loginTest.ValidatePasswordTest" />
+            <class name="BoardGovernanceTest.loginTest.RegistrationTest" />
+        </classes>
+    </test>
 
     <test name="Login">
         <classes >
@@ -16,12 +22,7 @@
         </classes>
     </test>
 
-    <test name="Registration">
-        <classes >
-            <class name="BoardGovernanceTest.loginTest.ValidatePasswordTest" />
-            <class name="BoardGovernanceTest.loginTest.RegistrationTest" />
-        </classes>
-    </test>
+
 
     <test name="Board">
         <classes >
@@ -37,7 +38,6 @@
             <class name="BoardGovernanceTest.boardsTest.foldersTest.DeleteFolderTest" />
             <class name="BoardGovernanceTest.boardsTest.foldersTest.MoveFolderTest" />
             <class name="BoardGovernanceTest.boardsTest.foldersTest.AppearanceFolderTest" />
-
         </classes>
     </test>
 

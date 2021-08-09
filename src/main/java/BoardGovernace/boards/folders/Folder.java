@@ -18,8 +18,10 @@ public class Folder extends Board {
     List<WebElement> folderNameField;
     @FindBy(xpath = "//*[@id=\"ngdialog1\"]/div[2]/form/div/button[2]")
     WebElement saveFolderButton;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-folder-create/modal/div/div[2]/div/ng-transclude/form/form-input/div/div[2]")
+    public  @FindBy (xpath = "//*[@ng-if='error.messageKey']")
     WebElement errorText;
+//    @FindBy(linkText = "Please enter a name")
+//    WebElement errorText;
     @FindBy(className = "archive-file-list__box")
     List<WebElement> folderList;
     @FindBy(className = "mdi-dots-vertical")
