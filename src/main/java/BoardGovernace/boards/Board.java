@@ -25,6 +25,7 @@ public class Board extends BasePage {
     public void openBoard() {
         driver.get("https://www.staging.board-office.dk/board-login/board-office/board/a33eccee-2573-4190-9bcd-c9018a174109/archive");
         Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
+        Waiters.treadWaiter(5);
     }
 
 
