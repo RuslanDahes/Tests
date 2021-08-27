@@ -2,6 +2,7 @@ package BoardGovernace.boards.folders;
 
 import BoardGovernace.boards.Board;
 import BoardGovernace.utils.Waiters;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,6 @@ import java.util.List;
 
 public class Folder extends Board {
     public Folder(WebDriver driver) { super(driver); }
-
     @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-tree/div/div[1]/div/div/div/button")
     WebElement createFolderButton;
     @FindBy(name = "folderName")
@@ -30,6 +30,10 @@ public class Folder extends Board {
     WebElement closePopupButton;
     @FindBy(className = "icon--color-bg-light-gray")
     List<WebElement> folderIcon;
+    @FindBy(name = "query")
+    WebElement searchField;
+    @FindBy(className = "archive-file-list__box")
+    List<WebElement> folderAreaList;
 
     public boolean checkFolderInList(String folderName) {
         boolean inList = false;
@@ -54,14 +58,19 @@ public class Folder extends Board {
     }
 
     public void openFolder(String folderName) {
-        int folderCount= 0;
         for(int i = 0; i<folderList.size(); i++) {
             if (folderList.get(i).getText().contains(folderName)) {
-                folderCount = i;
+                folderAreaList.get(i).click();
+                Waiters.treadWaiter(2);
                 break;
             }
         }
-        folderIcon.get(folderCount).click();
+    }
+
+    public void searchFolder(String folderName) {
+        searchField.sendKeys(folderName);
         Waiters.treadWaiter(1);
+        searchField.sendKeys(Keys.ENTER);
+        Waiters.treadWaiter(3);
     }
 }
