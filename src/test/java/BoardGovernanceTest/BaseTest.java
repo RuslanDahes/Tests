@@ -32,8 +32,8 @@ public class BaseTest {
 
     @BeforeClass
     public void openBrowser() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
         System.setProperty("webdriver.safari.driver", "src/test/resources/drivers/safaridriver");
 
