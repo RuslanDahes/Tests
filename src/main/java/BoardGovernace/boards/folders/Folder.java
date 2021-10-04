@@ -34,6 +34,8 @@ public class Folder extends Board {
     WebElement searchField;
     @FindBy(className = "archive-file-list__box")
     List<WebElement> folderAreaList;
+    @FindBy(xpath = "//*[@id=\"ngdialog1\"]/div[2]/div/button[2]")
+    WebElement savePermissionButton;
 
     public boolean checkFolderInList(String folderName) {
         boolean inList = false;

@@ -17,7 +17,7 @@ public class Login extends BasePage {
     WebElement emailField;
     @FindBy (name = "password")
     WebElement passwordField;
-    @FindBy (css = "body > div.wrapper > div > div.row.collapse > div > login-form > div > div > div > div.login-form.login-content.ng-scope > form > div.btn-wrap > button-submit > button")
+    @FindBy (className = "btn--primary")
     WebElement loginButton;
     @FindBy (className = "message-content")
     List<WebElement> loginError;

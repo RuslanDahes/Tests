@@ -3,6 +3,8 @@ package BoardGovernace.utils;
 public class UserCredentials {
     public static final String EMAIL_MYKHAIL = "mbi@compent.net";
     public static final String PASSWORD_MYKHAIL = "TestUser1995!";
+    public static final String EMAIL_TEST = "test21@compent.net";
+    public static final String PASSWORD_TEST = "TestUser1995!";
 
 
 

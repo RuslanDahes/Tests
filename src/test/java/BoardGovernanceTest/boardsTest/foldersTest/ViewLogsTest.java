@@ -28,7 +28,7 @@ public class ViewLogsTest extends BaseTest {
     }
 
     @Test
-    public void createFolder() {
+    public void createFolderLogs() {
         CreateFolder createFolder = new CreateFolder(getDriver());
         ViewLogs viewLogs = new ViewLogs(getDriver());
         createFolder.createFolder("CreateFolderLogs");

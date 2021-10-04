@@ -22,10 +22,7 @@ public class MoveFolderTest extends BaseTest {
     @BeforeMethod
     public void openPage() {
         DeleteFolder deleteFolder = new DeleteFolder(getDriver());
-
         deleteFolder.openBoard();
-
-
     }
 
     @Test
