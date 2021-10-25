@@ -24,4 +24,5 @@ public class Texts {
     public static final String TEST_FOLDER = "Test folder";
     public static final String TEST_EDIT_FOLDER = "Edit folder name";
     public static final String TEST_EDIT_FOLDER_CANCEL = "Edit folder name cancel";
+    public static final String TEST_FOLDER_FOR_UPLOAD_FILE = "Folder for file";
 }
