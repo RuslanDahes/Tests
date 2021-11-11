@@ -29,11 +29,11 @@ public class Registration extends BasePage {
     WebElement errorBlock;
     @FindBy(className = "error-list__item")
     List<WebElement> validationList;
-    @FindBy(xpath = "/html/body/div[3]/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/div/label/input")
+    @FindBy(xpath = "/html/body/div/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/div/label/input")
     WebElement conditionsCheckBox;
     @FindBy(className = "subscription-label")
     List<WebElement> tariffPlan;
-    @FindBy(xpath = "/html/body/div[3]/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/button")
+    @FindBy(className = "btn--lg")
     WebElement createProfileButton;
     @FindBy(className = "form-error-message")
     List<WebElement> errorlist;

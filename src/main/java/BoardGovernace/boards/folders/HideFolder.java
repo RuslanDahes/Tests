@@ -78,6 +78,7 @@ public class HideFolder extends Folder {
         openMenuFolder(lastFolder);
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", showFolderButton);
+        refreshPage();
     }
 
     public void refreshPage() {

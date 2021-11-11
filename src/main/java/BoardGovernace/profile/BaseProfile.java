@@ -15,12 +15,16 @@ public class BaseProfile extends BasePage {
     protected WebElement userProfileAvatar;
     @FindBy(className = "mdi-logout")
     protected List<WebElement> logoutButtonListOne;
+    @FindBy(className = "btn--default")
+    WebElement noButton;
 
 
     public void logout() {
         userProfileAvatar.click();
         Waiters.treadWaiter(1);
         logoutButtonListOne.get(1).click();
-        Waiters.treadWaiter(1);
+        Waiters.treadWaiter(2);
+//        noButton.click();
+//        Waiters.treadWaiter(2);
     }
 }

@@ -3,12 +3,12 @@
 
 <suite name="Test suite">
 
-<!--    <test name="Registration">-->
-<!--        <classes >-->
-<!--            <class name="BoardGovernanceTest.loginTest.ValidatePasswordTest" />-->
-<!--            <class name="BoardGovernanceTest.loginTest.RegistrationTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Registration">
+        <classes >
+            <class name="BoardGovernanceTest.loginTest.ValidatePasswordTest" />
+            <class name="BoardGovernanceTest.loginTest.RegistrationTest" />
+        </classes>
+    </test>
 
     <test name="Login">
         <classes >
@@ -16,28 +16,28 @@
         </classes>
     </test>
 
-<!--    <test name="Logout">-->
-<!--        <classes >-->
-<!--            <class name="BoardGovernanceTest.profileTest.logoutTest.LogoutTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Logout">
+        <classes >
+            <class name="BoardGovernanceTest.profileTest.logoutTest.LogoutTest" />
+        </classes>
+    </test>
 
-<!--    <test name="Board">-->
-<!--        <classes >-->
-<!--            <class name="BoardGovernanceTest.boardsTest.CreateBoardTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Board">
+        <classes >
+            <class name="BoardGovernanceTest.boardsTest.CreateBoardTest" />
+        </classes>
+    </test>
 
-<!--    <test name="Folder">-->
-<!--        <classes >-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.DeleteFolderTest" />-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.MoveFolderTest" />-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.AppearanceFolderTest" />-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.CreateFolderTest" />-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.RenameFolderTest" />-->
-<!--            <class name="BoardGovernanceTest.boardsTest.foldersTest.HideFolderTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Folder">
+        <classes >
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.DeleteFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.MoveFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.AppearanceFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.CreateFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.RenameFolderTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.HideFolderTest" />
+        </classes>
+    </test>
 
 
 </suite>

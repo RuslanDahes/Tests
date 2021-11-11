@@ -79,12 +79,12 @@ public class CreateBoardTest extends BaseTest {
         createBoard.checkError();
     }
 
-    @TestRails(id="86545")
-    @Test
-    public void checkTariffAboveUsers() {
-        CreateBoard createBoard = new CreateBoard(getDriver());
-        createBoard.aboveCheck();
-    }
+//    @TestRails(id="86545")
+//    @Test
+//    public void checkTariffAboveUsers() {
+//        CreateBoard createBoard = new CreateBoard(getDriver());
+//        createBoard.aboveCheck();
+//    }
 
     @AfterMethod
     public void setTestCase(ITestResult result, ITestContext ctx) throws IOException, APIException {

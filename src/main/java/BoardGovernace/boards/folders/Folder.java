@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Folder extends Board {
     public Folder(WebDriver driver) { super(driver); }
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-tree/div/div[1]/div/div/div/button")
+    @FindBy(xpath = "/html/body/div/section/div/div/board/ng-transclude/archive/div/archive-tree/div/div[1]/div/div/div/button")
     WebElement createFolderButton;
     @FindBy(name = "folderName")
     List<WebElement> folderNameField;
