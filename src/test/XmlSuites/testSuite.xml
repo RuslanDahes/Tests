@@ -39,6 +39,11 @@
         </classes>
     </test>
 
+    <test name="Files">
+        <classes >
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.filesTest.UploadFilesTest" />
+        </classes>
+    </test>
 
 </suite>
 
