@@ -32,8 +32,8 @@ public class BaseTest {
 
     @BeforeClass
     public void openBrowser() throws Exception {
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverforbg.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverwin.exe");
         System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
         System.setProperty("webdriver.safari.driver", "src/test/resources/drivers/safaridriver");
 
@@ -43,6 +43,7 @@ public class BaseTest {
             return;
         }
         driver.manage().window().maximize();
+        Waiters.treadWaiter(2);
         Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
     }
 

@@ -8,7 +8,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserFactory {
     public static final String FIREFOX = "FIREFOX";
-    public static final String CHROMEMOBILE = "CHROME";
     public static final String CHROMEWEB = "CHROMEWEB";
     public static final String SAFARI = "SAFARI";
 

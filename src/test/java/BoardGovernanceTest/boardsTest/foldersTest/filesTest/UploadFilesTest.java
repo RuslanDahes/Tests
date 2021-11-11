@@ -135,7 +135,7 @@ public class UploadFilesTest extends BaseTest {
     }
 
     @AfterMethod
-    public void logoutUser() {
+    public void refreshBoard() {
         getDriver().navigate().refresh();
         Waiters.treadWaiter(3);
     }

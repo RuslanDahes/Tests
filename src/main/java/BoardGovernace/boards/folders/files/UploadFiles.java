@@ -11,7 +11,7 @@ import java.util.List;
 
 public class UploadFiles extends Files {
     public UploadFiles(WebDriver driver) { super(driver); }
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-tree/div/div[1]/div/div/div/label/span")
+    @FindBy(className = "file-upload-btn")
     WebElement uploadFileButton;
     @FindBy(xpath = "/html/body/label[2]/input")
     WebElement uploadArea;
@@ -25,8 +25,7 @@ public class UploadFiles extends Files {
     WebElement gdprCheckbox;
     @FindBy(className = "mdi-delete")
     WebElement deleteIcon;
-    @FindBy(className = "archive-file-list__box")
-    List<WebElement> listOfFile;
+
 
     public void uploadFile(String file) {
         openPopupAndUploadFile(file);
