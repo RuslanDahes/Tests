@@ -20,7 +20,8 @@ public class BrowserFactory {
                 return new FirefoxDriver();
             case CHROMEWEB:
                 ChromeOptions capability = new ChromeOptions();
-                capability.addArguments("--headless");
+//                capability.addArguments("--headless");
+//                capability.addArguments("start-maximized");
                 return new ChromeDriver(capability);
             case SAFARI:
                 return new SafariDriver();

@@ -33,7 +33,7 @@ public class Registration extends BasePage {
     WebElement conditionsCheckBox;
     @FindBy(className = "subscription-label")
     List<WebElement> tariffPlan;
-    @FindBy(className = "btn--lg")
+    @FindBy(xpath = "/html/body/div/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/button")
     WebElement createProfileButton;
     @FindBy(className = "form-error-message")
     List<WebElement> errorlist;
@@ -103,14 +103,12 @@ public class Registration extends BasePage {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,createProfileButton);
         Waiters.treadWaiter(1);
-        createProfileButton.click();
-        Waiters.treadWaiter(1);
+        scrollAndClickToElement(createProfileButton);
     }
 
     public void checkPassword(String password) {
         passwordField.sendKeys(password);
-        clickCreateButton();
-        Waiters.treadWaiter(1);
+        scrollAndClickToElement(createProfileButton);
     }
 
     public List<WebElement> getValidationList() {
@@ -128,28 +126,20 @@ public class Registration extends BasePage {
         fillAllData();
         tariffPlan.get(typeAccount).click();
         Waiters.treadWaiter(1);
-        clickCreateButton();
-        Waiters.treadWaiter(3);
+        scrollAndClickToElement(createProfileButton);
     }
 
     public void payPopup(int typeOfAccount ) {
         driver.switchTo().frame(frame);
         Waiters.treadWaiter(2);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,danishCardIcon);
-        Waiters.treadWaiter(1);
-        Waiters.treadWaiter(3);
         if (typeOfAccount == 1) {
-            danishCardIcon.click();
-            Waiters.treadWaiter(2);
+            scrollAndClickToElement(danishCardIcon);
         }
         if (typeOfAccount == 2) {
-            visaCardIcon.click();
-            Waiters.treadWaiter(2);
+            scrollAndClickToElement(visaCardIcon);
         }
         if (typeOfAccount == 3) {
-            masterCardIcon.click();
-            Waiters.treadWaiter(2);
+            scrollAndClickToElement(masterCardIcon);
         }
         completePaymentButton.click();
         Waiters.treadWaiter(2);

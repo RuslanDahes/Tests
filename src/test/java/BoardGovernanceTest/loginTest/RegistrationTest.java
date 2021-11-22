@@ -96,7 +96,6 @@ public class RegistrationTest extends BaseTest {
     @Test (priority = 2)
     public void createEliteAccount() {
         Registration registration = new Registration(getDriver());
-        Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(3);
