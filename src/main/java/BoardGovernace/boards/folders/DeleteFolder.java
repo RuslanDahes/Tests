@@ -17,7 +17,7 @@ public class DeleteFolder extends Folder {
         deleteFolderButton.click();
         Waiters.treadWaiter(1);
         confirmationDeleteButton.click();
-        Waiters.treadWaiter(2);
+        Waiters.treadWaiter(5);
     }
 
     public boolean checkDeletedFolder() {

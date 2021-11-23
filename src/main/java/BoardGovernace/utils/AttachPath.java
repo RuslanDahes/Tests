@@ -11,6 +11,7 @@ public class AttachPath {
     public static String TEST_UPLOAD_JPG = "/src/test/resources/image.jpg";
     public static String TEST_UPLOAD_JPEG = "/src/test/resources/photo.jpeg";
     public static String TEST_UPLOAD_PNG = "/src/test/resources/testpicture.png";
+    public static String FILE_FOR_MOVE = "/src/test/resources/AttachmentFile/fileformove";
 
 //    public static String TEST_UPLOAD_PDF = "src/test/resources/pdf-test.pdf";
 //    public static String TEST_UPLOAD_DOC = "src/test/resources/TestDOC.doc";

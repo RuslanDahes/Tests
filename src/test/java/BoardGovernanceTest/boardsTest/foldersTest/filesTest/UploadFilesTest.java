@@ -28,12 +28,8 @@ import java.util.Map;
 public class UploadFilesTest extends BaseTest {
     @BeforeClass
     public void login() {
-        Login login = new Login(getDriver());
         UploadFiles uploadFiles = new UploadFiles(getDriver());
-        login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
-//        createBoard.acceptCookie();
-        uploadFiles.openBoard();
-        uploadFiles.openFolder(Texts.TEST_FOLDER_FOR_UPLOAD_FILE);
+        uploadFiles.openFolder();
     }
 
     @BeforeMethod

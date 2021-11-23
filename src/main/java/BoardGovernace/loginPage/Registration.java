@@ -15,6 +15,8 @@ import java.util.Set;
 
 public class Registration extends BasePage {
     public Registration(WebDriver driver) { super(driver); }
+    String testRandomEmail;
+
     @FindBy(name = "firstname")
     WebElement firstNameField;
     @FindBy(name = "middlename")
@@ -29,17 +31,16 @@ public class Registration extends BasePage {
     WebElement errorBlock;
     @FindBy(className = "error-list__item")
     List<WebElement> validationList;
-    @FindBy(xpath = "/html/body/div/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/div/label/input")
+    @FindBy(xpath = "//*[@data-cy='termsAcceptedCheckbox']")
     WebElement conditionsCheckBox;
     @FindBy(className = "subscription-label")
     List<WebElement> tariffPlan;
-    @FindBy(xpath = "/html/body/div/div[1]/signup-form/div[2]/div/form/div/div/div[2]/div[2]/div/button")
+    @FindBy(xpath = "//*[@data-cy='signupFormCreateBtn']")
     WebElement createProfileButton;
     @FindBy(className = "form-error-message")
     List<WebElement> errorlist;
     @FindBy(className = "error-list__item")
     List<WebDriver> passwordValidationList;
-    String testRandomEmail;
     @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_Logo1")
     WebElement danishCardIcon;
     @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_ctl00_Logo3")
@@ -52,7 +53,14 @@ public class Registration extends BasePage {
     WebElement frame;
     @FindBy(id = "ctl00_MainContent_WindowUC1_ctl00_epay_payment_return_button")
     WebElement continueButton;
-
+    public  @FindBy(xpath = "//*[@data-cy='licenseFreeReadMore']")
+    WebElement freeTariffReadMoreButton;
+    public  @FindBy(xpath = "//*[@data-cy='licenseBasicReadMore']")
+    WebElement basicTariffReadMoreButton;
+    public  @FindBy(xpath = "//*[@data-cy='licenseProReadMore']")
+    WebElement proTariffReadMoreButton;
+    public  @FindBy(xpath = "//*[@data-cy='licenseEliteReadMore']")
+    WebElement eliteTariffReadMoreButton;
 
     public String getTestRandomEmail() {
         return testRandomEmail;
@@ -122,9 +130,9 @@ public class Registration extends BasePage {
         Waiters.treadWaiter(2);
     }
 
-    public void createAccount(int typeAccount) {
+    public void createAccount(WebElement tariffPlan) {
         fillAllData();
-        tariffPlan.get(typeAccount).click();
+        tariffPlan.click();
         Waiters.treadWaiter(1);
         scrollAndClickToElement(createProfileButton);
     }

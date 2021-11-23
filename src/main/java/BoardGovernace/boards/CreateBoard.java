@@ -15,17 +15,17 @@ import java.util.List;
 
 public class CreateBoard extends BasePage {
     public CreateBoard(WebDriver driver) { super(driver); }
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[1]/div/div[1]/form-input/div/div/div/ng-transclude/input")
+    @FindBy(xpath = "//*[@data-cy='nameField']")
     WebElement boardNameField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[1]/div[1]/form-input/div/div/div/ng-transclude/input")
+    @FindBy(xpath = "//*[@data-cy='companyField']")
     WebElement companyNameField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[2]/div[1]/form-input/div/div/div/ng-transclude/input")
+    @FindBy(xpath = "//*[@data-cy='cvrField']")
     WebElement cvrField;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[3]/div[1]/form-input/div/div/div/input")
+    @FindBy(name = "ean")
     WebElement eanField;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[1]/div[2]/form-input/div/div/div/input")
+    @FindBy(name = "contact")
     WebElement contactPersonField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[2]/div[2]/form-input/div/div/div/ng-transclude/input")
+    @FindBy(xpath = "//*[@data-cy='sectoralCodeField']")
     WebElement sectoralField;
     @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[4]/div/form-input/div/div/div/input")
     WebElement addressField;
@@ -35,33 +35,33 @@ public class CreateBoard extends BasePage {
     WebElement zipCodeField;
     @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[6]/div[1]/form-input/div/div/div/input")
     WebElement phoneField;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[3]/form-input/div/div/div/input")
+    @FindBy(name = "country")
     WebElement countryField;
     @FindBy(name = "email")
     WebElement emailField;
     @FindBy(name = "language")
     WebElement languageDropDownList;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[3]/div[2]/form-input/div/div/div/ng-transclude/div")
+    @FindBy(xpath = "//*[@data-cy='employeesCountSelect']")
     WebElement employeesContDropDownList;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[2]/div/div/label/input")
+    @FindBy(xpath = "//*[@data-cy='termsAcceptedCheckbox']")
     WebElement termOfUseCheckBox;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/insurance-terms/div[2]/div/div/label/input")
+    @FindBy(xpath = "//*[@data-cy='codanTermsAcceptedCheckbox']")
     WebElement acceptComplianceCheckBox;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/insurance-terms/div[3]/div/div/label/input")
     WebElement compensationAgainstCheckBox;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/insurance-terms/div[1]/div/form-input/div/div/div/ng-transclude/div/a")
     WebElement directorsDropDownList;
-    @FindBy(className = "btn--lg")
+    @FindBy(xpath = "//*[@data-cy='createNewBoardBtn']")
     WebElement registrationBoardButton;
     @FindBy(className = "subscription__mark")
     List<WebElement> priceBlocks;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[1]/div[1]/div/div[2]/p[2]/select")
+    @FindBy(xpath = "//*[@data-cy='subscriptionMembersCountMini']")
     WebElement miniStartUserCount;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[1]/div[2]/div/div[2]/p[2]/select")
+    @FindBy(xpath = "//*[@data-cy='subscriptionMembersCountStandard']")
     WebElement basicUserCount;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[1]/div[3]/div/div[2]/p[2]/select")
+    @FindBy(xpath = "//*[@data-cy='subscriptionMembersCountElite']")
     WebElement eliteUserCount;
-    @FindBy(xpath = "/html/body/div[3]/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[5]/div[1]/div[4]/div/div[2]/p[2]/select")
+    @FindBy(xpath = "//*[@data-cy='subscriptionCorporate']")
     WebElement corporateUserCount;
     @FindBy(className = "subscription--elite")
     WebElement eliteTariff;
@@ -71,7 +71,6 @@ public class CreateBoard extends BasePage {
     List<WebElement> priceBlocksList;
     @FindBy(className = "subscription--corporate")
     WebElement corporateTariff;
-
     @FindBy(className = "cookie-message-accept")
     WebElement cookieAcceptButton;
 

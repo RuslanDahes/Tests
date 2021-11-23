@@ -25,8 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistrationTest extends BaseTest {
-
-
     @BeforeMethod
     public void getTestCase(ITestContext ctx, Method method) throws NoSuchMethodException {
         Method m = RegistrationTest.class.getMethod(method.getName());
@@ -65,7 +63,7 @@ public class RegistrationTest extends BaseTest {
         Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
-        registration.createAccount(0);
+        registration.createAccount(registration.freeTariffReadMoreButton);
 //        login.loginUser(registration.getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
 //        Waiters.treadWaiter(10);
     }
@@ -74,10 +72,9 @@ public class RegistrationTest extends BaseTest {
     @Test (priority = 2)
     public void createBasicAccount() {
         Registration registration = new Registration(getDriver());
-        Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
-        registration.createAccount(1);
+        registration.createAccount(registration.basicTariffReadMoreButton);
         registration.payPopup(1);
     }
 
@@ -85,10 +82,9 @@ public class RegistrationTest extends BaseTest {
     @Test (priority = 2)
     public void createProAccount() {
         Registration registration = new Registration(getDriver());
-        Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
-        registration.createAccount(2);
+        registration.createAccount(registration.proTariffReadMoreButton);
         registration.payPopup(2);
     }
 
@@ -98,7 +94,7 @@ public class RegistrationTest extends BaseTest {
         Registration registration = new Registration(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
-        registration.createAccount(3);
+        registration.createAccount(registration.eliteTariffReadMoreButton);
         registration.payPopup(3);
     }
 

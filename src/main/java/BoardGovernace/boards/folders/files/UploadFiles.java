@@ -1,13 +1,9 @@
 package BoardGovernace.boards.folders.files;
 
 import BoardGovernace.utils.Waiters;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 public class UploadFiles extends Files {
     public UploadFiles(WebDriver driver) { super(driver); }
@@ -48,14 +44,13 @@ public class UploadFiles extends Files {
         boolean present =false;
         driver.navigate().refresh();
         Waiters.treadWaiter(3);
-        for (WebElement element : listOfFile) {
+        for (WebElement element : fileList) {
             System.out.println(element.getText());
             if (element.getText().contains(fileName)) {
                 present = true;
                 break;
             }
         }
-        System.out.println("test");
         return present;
     }
 
@@ -70,10 +65,9 @@ public class UploadFiles extends Files {
     }
 
     public void finishUpload() {
-        Waiters.treadWaiter(1);
         attachFileButton.click();
         Waiters.treadWaiter(3);
         okButton.click();
-        Waiters.treadWaiter(1);
+        Waiters.treadWaiter(5);
     }
 }
