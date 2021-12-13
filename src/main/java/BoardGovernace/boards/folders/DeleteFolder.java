@@ -7,14 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class DeleteFolder extends Folder {
     public DeleteFolder(WebDriver driver) { super(driver); }
-    @FindBy(linkText = "Delete folder")
-    WebElement deleteFolderButton;
     @FindBy(linkText = "Delete")
     WebElement confirmationDeleteButton;
 
 
     public void deleteFolder() {
-        deleteFolderButton.click();
+        clickOnElementJSTreadWait(deleteFolderButton, 2);
         Waiters.treadWaiter(1);
         confirmationDeleteButton.click();
         Waiters.treadWaiter(5);

@@ -13,8 +13,7 @@ import java.util.List;
 
 public class Permissions extends Folder {
     public Permissions(WebDriver driver) { super(driver); }
-    @FindBy(partialLinkText = "Folder permissions")
-    WebElement folderPermissionMenuButton;
+
     @FindBy(className = "mdi-checkbox-marked")
     List<WebElement> permissionCheckboxList;
     @FindBy(className = "small-item")
@@ -32,7 +31,7 @@ public class Permissions extends Folder {
 
     public void openPermissionPopup() {
         openMenuFolder("Folder for Permission");
-        folderPermissionMenuButton.click();
+        clickOnElementJSTreadWait(folderPermissionMenuButton, 2);
         Waiters.treadWaiter(1);
     }
 

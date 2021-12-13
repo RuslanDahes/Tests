@@ -84,11 +84,4 @@ public class CreateFolderTest extends BaseTest {
         String caseId = (String)ctx.getAttribute("caseId");
         TestSuiteCreating.CLIENT.sendPost("add_result_for_case/"+TestSuiteCreating.TEST_RUN+"/"+caseId,data);
     }
-
-//    @AfterClass
-//    public void logout() {
-//        BaseProfile baseProfile = new BaseProfile(getDriver());
-//        baseProfile.openPage("");
-//        baseProfile.logout();
-//    }
 }

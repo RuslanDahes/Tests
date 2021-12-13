@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 public class Registration extends BasePage {
     public Registration(WebDriver driver) { super(driver); }
@@ -75,10 +74,11 @@ public class Registration extends BasePage {
         setTestRandomEmail("test" + String.valueOf(random.nextInt(1000000000)) + "@test.com");
         System.out.println(getTestRandomEmail());
         fillFields("FistName", "MiddleName", "SurName", getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,conditionsCheckBox);
-        Waiters.treadWaiter(1);
-        conditionsCheckBox.click();
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,conditionsCheckBox);
+//        Waiters.treadWaiter(1);
+        scrollAndClickToElementJS(conditionsCheckBox);
+//        conditionsCheckBox.click();
     }
 
     public void fillFields(String firstName, String middleName, String surName, String email, String password) {
@@ -111,12 +111,12 @@ public class Registration extends BasePage {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,createProfileButton);
         Waiters.treadWaiter(1);
-        scrollAndClickToElement(createProfileButton);
+        scrollAndClickToElementJS(createProfileButton);
     }
 
     public void checkPassword(String password) {
         passwordField.sendKeys(password);
-        scrollAndClickToElement(createProfileButton);
+        scrollAndClickToElementJS(createProfileButton);
     }
 
     public List<WebElement> getValidationList() {
@@ -132,22 +132,23 @@ public class Registration extends BasePage {
 
     public void createAccount(WebElement tariffPlan) {
         fillAllData();
-        tariffPlan.click();
+        scrollAndClickToElementJS(tariffPlan);
+//        tariffPlan.click();
         Waiters.treadWaiter(1);
-        scrollAndClickToElement(createProfileButton);
+        scrollAndClickToElementJS(createProfileButton);
     }
 
     public void payPopup(int typeOfAccount ) {
         driver.switchTo().frame(frame);
         Waiters.treadWaiter(2);
         if (typeOfAccount == 1) {
-            scrollAndClickToElement(danishCardIcon);
+            scrollAndClickToElementJS(danishCardIcon);
         }
         if (typeOfAccount == 2) {
-            scrollAndClickToElement(visaCardIcon);
+            scrollAndClickToElementJS(visaCardIcon);
         }
         if (typeOfAccount == 3) {
-            scrollAndClickToElement(masterCardIcon);
+            scrollAndClickToElementJS(masterCardIcon);
         }
         completePaymentButton.click();
         Waiters.treadWaiter(2);

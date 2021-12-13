@@ -12,7 +12,6 @@ public class Waiters {
     public static final  int TIME_SECONDS = 5;
 
     public static void implicitWait (WebDriver driver, int time, TimeUnit timeUnit) {
-
         driver.manage().timeouts().implicitlyWait(time, timeUnit);
     }
 

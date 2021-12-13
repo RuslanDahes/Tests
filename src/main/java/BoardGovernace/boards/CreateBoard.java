@@ -27,13 +27,13 @@ public class CreateBoard extends BasePage {
     WebElement contactPersonField;
     @FindBy(xpath = "//*[@data-cy='sectoralCodeField']")
     WebElement sectoralField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[4]/div/form-input/div/div/div/input")
+    @FindBy(xpath = "//*[@data-cy='addressField']")
     WebElement addressField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[1]/form-input/div/div/div/input")
+    @FindBy(xpath = "//*[@data-cy='cityField']")
     WebElement cityField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[5]/div[2]/form-input/div/div/div/input")
+    @FindBy(xpath = "//*[@data-cy='zipCodeField']")
     WebElement zipCodeField;
-    @FindBy(xpath = "/html/body/div/section/div/div/div[2]/div/div/div/new-board/form/div[2]/div[3]/div[6]/div[1]/form-input/div/div/div/input")
+    @FindBy(xpath = "//*[@data-cy='phoneField']")
     WebElement phoneField;
     @FindBy(name = "country")
     WebElement countryField;

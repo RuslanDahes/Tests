@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateBoardTest extends BaseTest {
+
+
     @BeforeClass
     public void login() {
         Login login = new Login(getDriver());
@@ -27,6 +29,7 @@ public class CreateBoardTest extends BaseTest {
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
 //        createBoard.acceptCookie();
     }
+
 
     @BeforeMethod
     public void getTestCase(ITestContext ctx, Method method) throws NoSuchMethodException {

@@ -1,6 +1,7 @@
 package BoardGovernanceTest.boardsTest.foldersTest;
 
 import BoardGovernace.boards.folders.AppearanceFolder;
+import BoardGovernace.boards.folders.CreateFolder;
 import BoardGovernace.loginPage.Login;
 import BoardGovernace.testrailConfig.APIException;
 import BoardGovernace.testrailConfig.TestRails;
@@ -39,7 +40,9 @@ public class AppearanceFolderTest extends BaseTest {
     @BeforeMethod
     public void openPage() {
         AppearanceFolder appearanceFolder = new AppearanceFolder(getDriver());
+        CreateFolder createFolder = new CreateFolder(getDriver());
         appearanceFolder.openBoard();
+        createFolder.createFolder("Appearance");
         appearanceFolder.openMenuFolder("Appearance");
     }
 

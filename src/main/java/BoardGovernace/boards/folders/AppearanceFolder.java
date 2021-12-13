@@ -11,8 +11,6 @@ import java.util.List;
 
 public class AppearanceFolder extends Folder {
     public AppearanceFolder(WebDriver driver) { super(driver); }
-    @FindBy(partialLinkText = "Appearance")
-    WebElement appearanceButton;
     @FindBy(className = "mdi-triangle")
     List<WebElement> dropdownButton;
     @FindBy(className = "icon--color-bg-green")
@@ -21,7 +19,7 @@ public class AppearanceFolder extends Folder {
     WebElement blueColorButton;
     @FindBy(className = "icon--color-green")
     WebElement greenIconButton;
-    @FindBy(linkText = "Save")
+    @FindBy(xpath = "//*[@data-cy='customSettingsSaveBtn']")
     WebElement saveButton;
     @FindBy(className = "archive-file-list__icon")
     List<WebElement> folderFonList;
@@ -31,8 +29,7 @@ public class AppearanceFolder extends Folder {
 
 
     public void selectAppearance() {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", appearanceButton);
+        clickOnElementJSTreadWait(appearanceButton, 2);
         Waiters.treadWaiter(1);
     }
 

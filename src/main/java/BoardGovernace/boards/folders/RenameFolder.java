@@ -12,18 +12,14 @@ public class RenameFolder extends Folder {
     public RenameFolder(WebDriver driver) { super(driver); }
 //    @FindBy(className = "//*[@id=\"folder-id-60282\"]/div[3]/div/ul/li[5]/a")
 //    WebElement editNameButton;
-    @FindBy(partialLinkText = "Rename folder")
-    WebElement editNameButton;
     @FindBy(xpath = "/html/body/div[3]/section/div/div/board/ng-transclude/archive/div/archive-folder-create/modal/div/div[2]/div/ng-transclude/form/div/button[2]")
     WebElement saveNameButton;
 
 
     public void editFolderName() {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", editNameButton);
-        Waiters.treadWaiter(1);
+        clickOnElementJSTreadWait(editNameButton, 2);
 //        editNameButton.click();
-//        Waiters.treadWaiter(1);
+        Waiters.treadWaiter(1);
         folderNameField.get(1).sendKeys(Keys.COMMAND + "a");
         folderNameField.get(1).sendKeys(Keys.DELETE);
         Waiters.treadWaiter(1);

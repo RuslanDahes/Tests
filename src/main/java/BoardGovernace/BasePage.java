@@ -2,6 +2,8 @@ package BoardGovernace;
 
 import BoardGovernace.utils.Links;
 import BoardGovernace.utils.Waiters;
+import actions.Action;
+import actions.ActionJs;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,25 +15,39 @@ import java.util.concurrent.TimeUnit;
 
 public class BasePage {
     protected WebDriver driver;
+    protected Action action;
+    protected ActionJs actionJs;
+
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        this.action = new Action(driver);
+        this.actionJs = new ActionJs(driver);
         PageFactory.initElements(driver, this);
     }
 
     public void openPage(String pageUrl) {
-        driver.get(Links.STAGE_BASIC_URL + pageUrl);
-        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
+//        driver.get(Links.STAGE_BASIC_URL + pageUrl);
+        driver.get(Links.PRE_PROD_BASIC_URL + pageUrl);
+//        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
+        Waiters.treadWaiter(5);
+//        action.waitForPageLoaded();
     }
 
-    public void scrollAndClickToElement(WebElement element) {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,element);
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element)).click();
+    public void scrollAndClickToElementJS(WebElement element) {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();" ,element);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
         Waiters.treadWaiter(1);
     }
 
-    public void scrollAndInputToElement(WebElement element, String text) {
+    public void clickOnElementJSTreadWait(WebElement element, int timeInSec) {
+        Waiters.treadWaiter(timeInSec);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();" ,element);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+    }
+
+    public void scrollAndInputToElementJS(WebElement element, String text) {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,element);
         element.sendKeys(text);

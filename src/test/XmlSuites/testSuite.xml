@@ -13,20 +13,20 @@
     <test name="Login">
         <classes >
             <class name="BoardGovernanceTest.loginTest.LoginTest" />
-        </classes>
-    </test>
+            </classes>
+        </test>
 
-    <test name="Logout">
-        <classes >
-            <class name="BoardGovernanceTest.profileTest.logoutTest.LogoutTest" />
-        </classes>
-    </test>
+        <test name="Logout">
+            <classes >
+                <class name="BoardGovernanceTest.profileTest.logoutTest.LogoutTest" />
+            </classes>
+        </test>
 
-    <test name="Board">
-        <classes >
-            <class name="BoardGovernanceTest.boardsTest.CreateBoardTest" />
-        </classes>
-    </test>
+        <test name="Board">
+            <classes >
+                <class name="BoardGovernanceTest.boardsTest.CreateBoardTest" />
+            </classes>
+        </test>
 
     <test name="Folder">
         <classes >

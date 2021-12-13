@@ -1,6 +1,7 @@
 package BoardGovernace.boards;
 
 import BoardGovernace.BasePage;
+import BoardGovernace.utils.Links;
 import BoardGovernace.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Board extends BasePage {
     public Board(WebDriver driver) { super(driver); }
@@ -19,11 +19,8 @@ public class Board extends BasePage {
     List<WebElement> verticalDotsList;
 
     public void openBoard() {
-        driver.get("https://www.staging.board-office.dk/board-login/board-office/board/a33eccee-2573-4190-9bcd-c9018a174109/archive");
-        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
+        driver.get(Links.PRE_PROD_TEST_BOARD_URL);
+//        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
         Waiters.treadWaiter(5);
     }
-
-
-
 }

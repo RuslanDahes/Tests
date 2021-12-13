@@ -1,9 +1,9 @@
 package BoardGovernanceTest;
 
-import BoardGovernace.BasePage;
+
 import BoardGovernace.testrailConfig.APIClient;
 import BoardGovernace.testrailConfig.APIException;
-import BoardGovernace.testrailConfig.TestSuiteCreating;
+
 import BoardGovernace.utils.BrowserFactory;
 import BoardGovernace.utils.Links;
 import BoardGovernace.utils.UserCredentials;
@@ -12,7 +12,6 @@ import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
@@ -21,19 +20,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
 
 import static BoardGovernace.testrailConfig.TestSuiteCreating.*;
 
 public class BaseTest {
     private static WebDriver driver;
-    BasePage basePage = new BasePage(getDriver());
 
 
     @BeforeClass
     public void openBrowser() throws Exception {
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverwin.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverwin.exe");
         System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
         System.setProperty("webdriver.safari.driver", "src/test/resources/drivers/safaridriver");
 
@@ -44,7 +42,7 @@ public class BaseTest {
         }
         driver.manage().window().maximize();
         Waiters.treadWaiter(2);
-        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
+//        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
     }
 
     @BeforeSuite
@@ -75,7 +73,7 @@ public class BaseTest {
 //        Configuration.startMaximized = true;
 //    }
 
-    @AfterClass
+    @AfterClass (alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }

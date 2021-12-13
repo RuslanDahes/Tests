@@ -34,13 +34,21 @@ public class Login extends BasePage {
 
 
 
+//    public void loginUser(String email, String password) {
+//        openPage(Links.LOGIN_URL);
+//        emailField.sendKeys(email);
+//        Waiters.treadWaiter(1);
+//        passwordField.sendKeys(password);
+//        Waiters.treadWaiter(1);
+//        loginButton.click();
+//        Waiters.treadWaiter(2);
+//    }
+
     public void loginUser(String email, String password) {
         openPage(Links.LOGIN_URL);
-        emailField.sendKeys(email);
-        Waiters.treadWaiter(1);
-        passwordField.sendKeys(password);
-        Waiters.treadWaiter(1);
-        loginButton.click();
+        action.sendKeys(emailField, email);
+        action.sendKeys(passwordField, password);
+        action.click(loginButton);
         Waiters.treadWaiter(2);
     }
 }

@@ -10,10 +10,6 @@ import java.util.List;
 
 public class HideFolder extends Folder {
     public HideFolder(WebDriver driver) { super(driver); }
-    @FindBy(partialLinkText = "Hide folder")
-    WebElement hideFolderButton;
-    @FindBy(partialLinkText = "Show folder")
-    WebElement showFolderButton;
     @FindBy(className = "archive-toggler")
     List<WebElement> checkBoxList;
     @FindBy(className = "hidden-folders-header")

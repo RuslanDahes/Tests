@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Folder extends Board {
     public Folder(WebDriver driver) { super(driver); }
-    @FindBy(xpath = "/html/body/div/section/div/div/board/ng-transclude/archive/div/archive-tree/div/div[1]/div/div/div/button")
+    @FindBy(xpath = "//*[@data-cy='folderCreateBtn']")
     WebElement createFolderButton;
     @FindBy(name = "folderName")
     List<WebElement> folderNameField;
@@ -37,6 +37,29 @@ public class Folder extends Board {
     @FindBy(xpath = "//*[@id=\"ngdialog1\"]/div[2]/div/button[2]")
     WebElement savePermissionButton;
 
+    @FindBy(xpath = "//*[@data-cy='folderDeleteBtn']")
+    WebElement deleteFolderButton;
+    @FindBy(xpath = "//*[@data-cy='folderHideBtn']")
+    WebElement hideFolderButton;
+    @FindBy(xpath = "//*[@data-cy='hiddenFolderVisibilityBtn']")
+    WebElement showFolderButton;
+    @FindBy(xpath = "//*[@data-cy='folderAppearanceBtn']")
+    WebElement appearanceButton;
+    @FindBy(xpath = "//*[@data-cy='folderPermissionsBtn']")
+    WebElement folderPermissionMenuButton;
+    @FindBy(xpath = "//*[@data-cy='folderMoveBtn']")
+    WebElement moveFolderOnPanelButton;
+    @FindBy(xpath = "//*[@data-cy='folderRenameBtn']")
+    WebElement editNameButton;
+    @FindBy(xpath = "//*[@data-cy='folderViewLogBtn']")
+    WebElement viewLogButton;
+    @FindBy(xpath = "//*[@data-cy='folderCancelBtn']")
+    WebElement cancelButton;
+
+
+
+
+
     public boolean checkFolderInList(String folderName) {
         boolean inList = false;
         for(int i = 0; i<folderList.size(); i++) {
@@ -55,7 +78,8 @@ public class Folder extends Board {
                 break;
             }
         }
-        dotsVerticalList.get(menuFolderCount).click();
+        Waiters.treadWaiter(2);
+        scrollAndClickToElementJS(dotsVerticalList.get(menuFolderCount));
         Waiters.treadWaiter(1);
     }
 
