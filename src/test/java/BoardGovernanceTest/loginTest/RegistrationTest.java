@@ -68,35 +68,35 @@ public class RegistrationTest extends BaseTest {
 //        Waiters.treadWaiter(10);
     }
 
-    @TestRails(id="86472")
-    @Test (priority = 2)
-    public void createBasicAccount() {
-        Registration registration = new Registration(getDriver());
-        registration.openPage("/en/opret-bruger/");
-        Waiters.treadWaiter(1);
-        registration.createAccount(registration.basicTariffReadMoreButton);
-        registration.payPopup(1);
-    }
-
-    @TestRails(id="86473")
-    @Test (priority = 2)
-    public void createProAccount() {
-        Registration registration = new Registration(getDriver());
-        registration.openPage("/en/opret-bruger/");
-        Waiters.treadWaiter(1);
-        registration.createAccount(registration.proTariffReadMoreButton);
-        registration.payPopup(2);
-    }
-
-    @TestRails(id="86474")
-    @Test (priority = 2)
-    public void createEliteAccount() {
-        Registration registration = new Registration(getDriver());
-        registration.openPage("/en/opret-bruger/");
-        Waiters.treadWaiter(1);
-        registration.createAccount(registration.eliteTariffReadMoreButton);
-        registration.payPopup(3);
-    }
+//    @TestRails(id="86472")
+//    @Test (priority = 2)
+//    public void createBasicAccount() {
+//        Registration registration = new Registration(getDriver());
+//        registration.openPage("/en/opret-bruger/");
+//        Waiters.treadWaiter(1);
+//        registration.createAccount(registration.basicTariffReadMoreButton);
+//        registration.payPopup(1);
+//    }
+//
+//    @TestRails(id="86473")
+//    @Test (priority = 2)
+//    public void createProAccount() {
+//        Registration registration = new Registration(getDriver());
+//        registration.openPage("/en/opret-bruger/");
+//        Waiters.treadWaiter(1);
+//        registration.createAccount(registration.proTariffReadMoreButton);
+//        registration.payPopup(2);
+//    }
+//
+//    @TestRails(id="86474")
+//    @Test (priority = 2)
+//    public void createEliteAccount() {
+//        Registration registration = new Registration(getDriver());
+//        registration.openPage("/en/opret-bruger/");
+//        Waiters.treadWaiter(1);
+//        registration.createAccount(registration.eliteTariffReadMoreButton);
+//        registration.payPopup(3);
+//    }
 
 
     @AfterMethod
