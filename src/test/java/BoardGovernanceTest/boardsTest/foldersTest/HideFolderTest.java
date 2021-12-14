@@ -28,7 +28,6 @@ public class HideFolderTest extends BaseTest {
     public void login() {
         Login login = new Login(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
-//        createBoard.acceptCookie();
         CreateFolder createFolder = new CreateFolder(getDriver());
         createFolder.openBoard();
     }

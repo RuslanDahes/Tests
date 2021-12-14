@@ -41,8 +41,6 @@ public class BaseTest {
             return;
         }
         driver.manage().window().maximize();
-        Waiters.treadWaiter(2);
-//        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
     }
 
     @BeforeSuite
@@ -63,15 +61,6 @@ public class BaseTest {
         System.out.println("Run ID" + run_id);
         ctx.setAttribute("suiteId",run_id);
     }
-
-
-
-//    @BeforeSuite
-//    public void openBrowser() {
-//        Configuration.baseUrl= Links.STAGE_BASIC_URL;
-//        Configuration.browser = "chrome";
-//        Configuration.startMaximized = true;
-//    }
 
     @AfterClass (alwaysRun = true)
     public void tearDown() {

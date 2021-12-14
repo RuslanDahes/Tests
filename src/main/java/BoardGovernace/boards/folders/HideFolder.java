@@ -34,7 +34,7 @@ public class HideFolder extends Folder {
 
     public void hideFolder() {
         checkNameFirstFolder();
-        dotsVerticalList.get(0).click();
+        scrollAndClickToElementJS(dotsVerticalList.get(0));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", hideFolderButton);
         Waiters.treadWaiter(1);
@@ -68,8 +68,6 @@ public class HideFolder extends Folder {
     }
 
     public void showFolder() {
-//        Waiters.treadWaiter(3);
-//        displayAndHideFolders();
         checkNameLastFolder();
         openMenuFolder(lastFolder);
         JavascriptExecutor executor = (JavascriptExecutor)driver;
