@@ -58,16 +58,17 @@ public class UploadFiles extends Files {
 
     public void openPopupAndUploadFile(String file) {
         String filePath = System.getProperty("user.dir") + file;
-        uploadFileButton.click();
+        action.waitForPageLoaded();
+        action.click(uploadFileButton);
         Waiters.treadWaiter(2);
+//        action.sendKeys(uploadArea ,filePath);
         uploadArea.sendKeys(filePath);
         Waiters.treadWaiter(3);
     }
 
     public void finishUpload() {
-        attachFileButton.click();
-        Waiters.treadWaiter(3);
-        okButton.click();
-        Waiters.treadWaiter(5);
+        action.click(attachFileButton);
+        action.click(okButton);
+        action.waitForPageLoaded();
     }
 }

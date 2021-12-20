@@ -29,10 +29,8 @@ public class MoveFolderTest extends BaseTest {
     @Test
     public void moveFolder() {
         DeleteFolder deleteFolder = new DeleteFolder(getDriver());
-        CreateFolder createFolder = new CreateFolder(getDriver());
         MoveFolder moveFolder = new MoveFolder(getDriver());
-        createFolder.createFolder("FolderForMove");
-        deleteFolder.openMenuFolder("FolderForMove");
+        deleteFolder.openMenuFolder("FolderForMoveFile");
         moveFolder.moveFolder("Folder to move");
 //        Assert.assertTrue(moveFolder.checkFolder());
     }
@@ -41,8 +39,8 @@ public class MoveFolderTest extends BaseTest {
     public void moveFolderToCurrentFolder() {
         DeleteFolder deleteFolder = new DeleteFolder(getDriver());
         MoveFolder moveFolder = new MoveFolder(getDriver());
-        deleteFolder.openMenuFolder("Folder to move");
-        moveFolder.moveFolder("Folder to move");
+        deleteFolder.openMenuFolder("FolderToMoveFile");
+        moveFolder.moveFolder("FolderToMoveFile");
 //        Assert.assertTrue(moveFolder.checkMoveButtonState());
     }
 }

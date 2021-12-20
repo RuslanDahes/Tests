@@ -30,8 +30,7 @@ public class BasePage {
 //        driver.get(Links.STAGE_BASIC_URL + pageUrl);
         driver.get(Links.PRE_PROD_BASIC_URL + pageUrl);
 //        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
-        Waiters.treadWaiter(5);
-//        action.waitForPageLoaded();
+        action.waitForPageLoaded();
     }
 
     public void scrollAndClickToElementJS(WebElement element) {

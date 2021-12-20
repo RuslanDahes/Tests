@@ -27,24 +27,28 @@ public class EditFiles extends UploadFiles {
 
     public void editFile(String nameFileForEdit, String newName, String descriptionText) {
         openFile(nameFileForEdit);
-        editButton.click();
-        Waiters.treadWaiter(2);
-        fileNameField.sendKeys(Keys.chord(Keys.COMMAND, "a"), newName);
-        descriptionField.sendKeys(descriptionText);
-        saveChangesButton.click();
-        Waiters.treadWaiter(3);
+        action.waitForPageLoaded();
+        scrollAndClickToElementJS(editButton);
+        action.waitForPageLoaded();
+        action.clearAndSendKeys(fileNameField, newName);
+        action.clearAndSendKeys(descriptionField, descriptionText);
+        action.click(saveChangesButton);
+        action.waitForPageLoaded();
     }
 
     public void editFile(String nameFileForEdit, String newName) {
         openFile(nameFileForEdit);
-        editButton.click();
-        Waiters.treadWaiter(2);
-        fileNameField.sendKeys(Keys.chord(Keys.COMMAND, "a"), newName);
-        saveChangesButton.click();
-        Waiters.treadWaiter(3);
+        action.waitForPageLoaded();
+        scrollAndClickToElementJS(editButton);
+        action.waitForPageLoaded();
+        action.clearAndSendKeys(fileNameField, newName);
+        action.click(saveChangesButton);
+        action.waitForPageLoaded();
     }
 
     public String getFileTitle() {
+        action.waitForPageLoaded();
+        action.waitForVisible(fileTitle);
         return fileTitle.getText();
     }
 
@@ -53,7 +57,8 @@ public class EditFiles extends UploadFiles {
     }
 
     public void backToFolder() {
-        breadcrumbList.get(breadcrumbList.size()-1).click();
-        Waiters.treadWaiter(2);
+        action.waitForPageLoaded();
+        action.click(breadcrumbList.get(breadcrumbList.size()-1));
+        action.waitForPageLoaded();
     }
 }

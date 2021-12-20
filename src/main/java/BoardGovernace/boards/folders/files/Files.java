@@ -22,13 +22,15 @@ public class Files extends Folder {
     List<WebElement> menuFileDots;
 
     public void openFile(String fileName) {
+        action.waitForVisible(fileList);
         for (int i = 0; i < fileList.size(); i++) {
             if (fileList.get(i).getText().contains(fileName)) {
-                fileList.get(i).click();
-                Waiters.treadWaiter(2);
+                actionJs.click(fileList.get(i));
+//                Waiters.treadWaiter(2);
                 break;
             }
         }
+
     }
 
     public void openFolder() {
@@ -47,7 +49,6 @@ public class Files extends Folder {
                 break;
             }
         }
-        menuFileDots.get(menuFolderCount).click();
-        Waiters.treadWaiter(1);
+        actionJs.scrollAndClickToElementJS(menuFileDots.get(menuFolderCount));
     }
 }

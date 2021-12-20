@@ -84,10 +84,14 @@ public class Folder extends Board {
     }
 
     public void openFolder(String folderName) {
+        action.waitForPageLoaded();
+        Waiters.treadWaiter(2);
+//        actionJs.waitForVisible(folderAreaList);
         for(int i = 0; i<folderList.size(); i++) {
             if (folderList.get(i).getText().contains(folderName)) {
-                folderAreaList.get(i).click();
-                Waiters.treadWaiter(2);
+                action.moveTo(folderAreaList.get(i));
+                action.click(folderAreaList.get(i));
+                action.waitForPageLoaded();
                 break;
             }
         }

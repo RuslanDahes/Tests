@@ -20,7 +20,7 @@ public class Board extends BasePage {
 
     public void openBoard() {
         driver.get(Links.PRE_PROD_TEST_BOARD_URL);
+        action.waitForPageLoaded();
 //        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
-        Waiters.treadWaiter(5);
     }
 }

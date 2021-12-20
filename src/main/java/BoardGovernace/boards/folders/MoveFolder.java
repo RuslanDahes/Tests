@@ -1,5 +1,6 @@
 package BoardGovernace.boards.folders;
 
+import BoardGovernace.utils.Links;
 import BoardGovernace.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,11 +36,9 @@ public class MoveFolder extends Folder {
 
 
     public boolean checkFolder() {
-//        openFolder("Folder to move");
-        driver.get("https://www.staging.board-office.dk/board-login/board-office/board/a33eccee-2573-4190-9bcd-c9018a174109/archive/?archiveGuid=32061195-bc09-4934-83c9-e8c11f3fdac8");
-//        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
-        Waiters.treadWaiter(10);
-        return checkFolderInList("FolderForMove");
+        openPage(Links.PRE_PROD_TEST_BOARD_URL);
+        openFolder("FolderToMoveFile");
+        return checkFolderInList("FolderForMoveFile");
     }
 
     public boolean checkMoveButtonState() {
