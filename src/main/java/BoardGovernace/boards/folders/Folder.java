@@ -60,7 +60,10 @@ public class Folder extends Board {
 
 
 
+
     public boolean checkFolderInList(String folderName) {
+        action.waitForPageLoaded();
+        action.waitForVisible(folderList);
         boolean inList = false;
         for(int i = 0; i<folderList.size(); i++) {
             if (folderList.get(i).getText().contains(folderName)) {

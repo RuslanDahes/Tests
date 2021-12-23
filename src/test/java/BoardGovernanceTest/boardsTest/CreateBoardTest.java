@@ -20,16 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateBoardTest extends BaseTest {
-
-
     @BeforeClass
     public void login() {
         Login login = new Login(getDriver());
-        CreateBoard createBoard = new CreateBoard(getDriver());
         login.loginUser(UserCredentials.EMAIL_MYKHAIL, UserCredentials.PASSWORD_MYKHAIL);
+        login.checkLoadedPage();
 //        createBoard.acceptCookie();
     }
-
 
     @BeforeMethod
     public void getTestCase(ITestContext ctx, Method method) throws NoSuchMethodException {

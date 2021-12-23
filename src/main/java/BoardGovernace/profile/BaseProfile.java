@@ -19,7 +19,9 @@ public class BaseProfile extends BasePage {
     WebElement noButton;
 
 
+
     public void logout() {
+        action.waitElementToBeClickable(userProfileAvatar);
         clickOnElementJSTreadWait(userProfileAvatar, 5);
         Waiters.treadWaiter(2);
         System.out.println(logoutButtonListOne.size());

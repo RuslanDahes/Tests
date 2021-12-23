@@ -11,14 +11,18 @@ public class CreateFolder extends Folder {
 
 
     public void createFolder(String folderName) {
-        createFolderButton.click();
-        Waiters.treadWaiter(1);
+        action.waitElementToBeClickable(createFolderButton);
+        action.click(createFolderButton);
         System.out.println(folderNameField.size());
-        folderNameField.get(1).sendKeys(folderName);
+        action.waitForVisible(folderNameField);
+        action.sendKeys(folderNameField.get(1), folderName);
+//        folderNameField.get(1).sendKeys(folderName);
 //        folderNameField.get(3).sendKeys(folderName);
-        Waiters.treadWaiter(2);
-        saveFolderButton.click();
-        Waiters.treadWaiter(2);
+//        Waiters.treadWaiter(2);
+        action.click(saveFolderButton);
+        action.waitForPageLoaded();
+//        saveFolderButton.click();
+//        Waiters.treadWaiter(2);
     }
 
 

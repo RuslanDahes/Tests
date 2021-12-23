@@ -21,6 +21,9 @@ public class Login extends BasePage {
     WebElement loginButton;
     @FindBy (className = "message-content")
     List<WebElement> loginError;
+    @FindBy(className = "user-details")
+    public WebElement userProfileAvatar;
+
 
     public List<WebElement> getLoginError() {
         return loginError;
@@ -49,6 +52,12 @@ public class Login extends BasePage {
         action.sendKeys(emailField, email);
         action.sendKeys(passwordField, password);
         action.click(loginButton);
-        Waiters.treadWaiter(2);
+        action.waitForPageLoaded();
+        Waiters.treadWaiter(5);
+    }
+
+    public void checkLoadedPage() {
+        action.waitForVisible(userProfileAvatar);
+        action.waitElementToBeClickable(userProfileAvatar);
     }
 }

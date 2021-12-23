@@ -42,7 +42,7 @@ public class LogoutTest extends BaseTest {
     public void logoutUser() {
         BaseProfile baseProfile = new BaseProfile(getDriver());
         baseProfile.logout();
-        Waiters.treadWaiter(3);
+
 //        Assert.assertEquals(getDriver().getCurrentUrl(), Links.STAGE_BASIC_URL + Links.LOGIN_URL);
     }
 

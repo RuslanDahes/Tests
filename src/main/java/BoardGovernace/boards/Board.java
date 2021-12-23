@@ -17,10 +17,15 @@ public class Board extends BasePage {
     List<WebElement> companyNameList;
     @FindBy(className = "mdi-dots-vertical")
     List<WebElement> verticalDotsList;
+    @FindBy(className = "user-details")
+    public WebElement userProfileAvatar;
 
     public void openBoard() {
+        action.waitForVisible(userProfileAvatar);
         driver.get(Links.PRE_PROD_TEST_BOARD_URL);
         action.waitForPageLoaded();
+        Waiters.treadWaiter(3);
+//        action.waitForVisible(verticalDotsList);
 //        Waiters.implicitWait(driver, Waiters.TIME_TEN, TimeUnit.SECONDS);
     }
 }

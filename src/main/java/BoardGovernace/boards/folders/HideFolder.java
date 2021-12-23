@@ -21,6 +21,7 @@ public class HideFolder extends Folder {
     static String lastFolder;
 
     public void checkNameFirstFolder() {
+        action.waitForVisible(folderList);
         folderName = folderList.get(0).getText();
         System.out.println(folderName);
     }
@@ -33,6 +34,7 @@ public class HideFolder extends Folder {
     }
 
     public void hideFolder() {
+        action.waitForPageLoaded();
         checkNameFirstFolder();
         scrollAndClickToElementJS(dotsVerticalList.get(0));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -41,7 +43,8 @@ public class HideFolder extends Folder {
     }
 
     public void displayAndHideFolders() {
-        checkBoxList.get(2).click();
+        action.waitForPageLoaded();
+        action.click(checkBoxList.get(2));
         Waiters.treadWaiter(2);
 //        JavascriptExecutor executor = (JavascriptExecutor)driver;
 //        executor.executeScript("arguments[0];", hideFoldersBlock);

@@ -62,10 +62,10 @@ public class BaseTest {
         ctx.setAttribute("suiteId",run_id);
     }
 
-//    @AfterClass (alwaysRun = true)
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterClass (alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
+    }
 
     public WebDriver getDriver() {
         return driver;
