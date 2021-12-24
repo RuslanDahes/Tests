@@ -79,6 +79,23 @@ public class ValidatePasswordTest extends BaseTest {
         Assert.assertEquals(registration.getErrorlist().get(3).getCssValue("color"), Params.redColor);
     }
 
+    @TestRails(id="87588")
+    @Test
+    public void  withOutConfirmationPassword() {
+        Registration registration = new Registration(getDriver());
+        registration.checkConfirmationPassword(Texts.WRONG_TEST_PASSWORD, "");
+        Assert.assertEquals(registration.getErrorlist().get(4).getCssValue("color"), Params.redColor);
+    }
+
+    @TestRails(id="87589")
+    @Test
+    public void  withIncorrectConfirmationPassword() {
+        Registration registration = new Registration(getDriver());
+        registration.checkConfirmationPassword(Texts.WRONG_TEST_PASSWORD, "test");
+        Assert.assertEquals(registration.getErrorlist().get(4).getCssValue("color"), Params.redColor);
+    }
+
+
     @AfterMethod
     public void clearData() {
         Registration registration = new Registration(getDriver());

@@ -24,8 +24,10 @@ public class Registration extends BasePage {
     WebElement surnameField;
     @FindBy(name = "email")
     WebElement emailField;
-    @FindBy(name = "password")
+    @FindBy(name = "newPassword")
     WebElement passwordField;
+    @FindBy(name = "newPasswordConfirmation")
+    WebElement confirmationPasswordField;
     @FindBy(className = "error-listerror-list")
     WebElement errorBlock;
     @FindBy(className = "error-list__item")
@@ -73,22 +75,18 @@ public class Registration extends BasePage {
         Random random = new Random();
         setTestRandomEmail("test" + String.valueOf(random.nextInt(1000000000)) + "@test.com");
         System.out.println(getTestRandomEmail());
-        fillFields("FistName", "MiddleName", "SurName", getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
-//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-//                ,conditionsCheckBox);
-//        Waiters.treadWaiter(1);
+        fillFields("FistName", "MiddleName", "SurName", getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION, UserCredentials.PASSWORD_FOR_REGISTRATION);
         scrollAndClickToElementJS(conditionsCheckBox);
-//        conditionsCheckBox.click();
     }
 
-    public void fillFields(String firstName, String middleName, String surName, String email, String password) {
-        firstNameField.sendKeys(firstName);
-        middleNameField.sendKeys(middleName);
-        surnameField.sendKeys(surName);
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
-        Waiters.treadWaiter(2);
-
+    public void fillFields(String firstName, String middleName, String surName, String email, String password, String confirmationPassword) {
+        action.waitForPageLoaded();
+        action.sendKeys(firstNameField, firstName);
+        action.sendKeys(middleNameField, middleName);
+        action.sendKeys(surnameField, surName);
+        action.sendKeys(emailField, email);
+        action.sendKeys(passwordField, password);
+        action.sendKeys(confirmationPasswordField, confirmationPassword);
     }
 
     public void clearFields() {
@@ -115,8 +113,18 @@ public class Registration extends BasePage {
     }
 
     public void checkPassword(String password) {
-        passwordField.sendKeys(password);
+        action.waitForPageLoaded();
+        action.sendKeys(passwordField, password);
         scrollAndClickToElementJS(createProfileButton);
+        action.waitForPageLoaded();
+    }
+
+    public void checkConfirmationPassword(String password, String confirmationPassword) {
+        action.waitForPageLoaded();
+        action.sendKeys(passwordField, password);
+        action.sendKeys(confirmationPasswordField, confirmationPassword);
+        scrollAndClickToElementJS(createProfileButton);
+        action.waitForPageLoaded();
     }
 
     public List<WebElement> getValidationList() {
@@ -125,17 +133,15 @@ public class Registration extends BasePage {
 
     public void acceptAlert() {
         Alert alert = driver.switchTo().alert();
-        Waiters.treadWaiter(1);
         alert.accept();
-        Waiters.treadWaiter(2);
+        action.waitForPageLoaded();
     }
 
     public void createAccount(WebElement tariffPlan) {
         fillAllData();
         scrollAndClickToElementJS(tariffPlan);
-//        tariffPlan.click();
-        Waiters.treadWaiter(1);
         scrollAndClickToElementJS(createProfileButton);
+        action.waitForPageLoaded();
     }
 
     public void payPopup(int typeOfAccount ) {

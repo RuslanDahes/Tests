@@ -40,7 +40,6 @@ public class RegistrationTest extends BaseTest {
     public void tryRegistrationWithOutTariffPlan() {
         Registration registration = new Registration(getDriver());
         registration.openPage("/en/opret-bruger/");
-        Waiters.treadWaiter(1);
         registration.fillAllData();
         registration.clickCreateButton();
         registration.acceptAlert();
@@ -51,16 +50,14 @@ public class RegistrationTest extends BaseTest {
     public void checkErrorVisibility() {
         Registration registration = new Registration(getDriver());
         registration.openPage("/en/opret-bruger/");
-        Waiters.treadWaiter(1);
         registration.clickCreateButton();
-        Assert.assertEquals(registration.getErrorlist().size(), 4);
+        Assert.assertEquals(registration.getErrorlist().size(), 5);
     }
 
     @TestRails(id="86471")
     @Test (priority = 2)
     public void createFreeAccount() {
         Registration registration = new Registration(getDriver());
-        Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(registration.freeTariffReadMoreButton);
