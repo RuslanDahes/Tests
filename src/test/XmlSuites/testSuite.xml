@@ -42,6 +42,8 @@
     <test name="Files">
         <classes >
             <class name="BoardGovernanceTest.boardsTest.foldersTest.filesTest.UploadFilesTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.filesTest.EditFilesTest" />
+            <class name="BoardGovernanceTest.boardsTest.foldersTest.filesTest.MoveFilesTest" />
         </classes>
     </test>
 </suite>
