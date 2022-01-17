@@ -56,11 +56,6 @@ public class Folder extends Board {
     @FindBy(xpath = "//*[@data-cy='folderCancelBtn']")
     WebElement cancelButton;
 
-
-
-
-
-
     public boolean checkFolderInList(String folderName) {
         action.waitForPageLoaded();
         action.waitForVisible(folderList);

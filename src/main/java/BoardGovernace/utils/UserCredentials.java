@@ -14,5 +14,6 @@ public class UserCredentials {
 
 
     public static final String TESTRAIL_LOGIN = "ogo@compent.net";
-    public static final String TESTRAIL_PASSWORD = "Q1w2e3r4";
+//    public static final String TESTRAIL_PASSWORD = "Q1w2e3r4";
+    public static final String TESTRAIL_PASSWORD = "#;G+vd5eAd";
 }

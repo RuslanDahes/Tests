@@ -38,8 +38,6 @@ public class Act {
         return (FluentWait) wait;
     }
 
-
-
     protected WebElement findWebElement(By by) {
         waitForPageLoaded();
         WebElement element = driver.findElement(by);
