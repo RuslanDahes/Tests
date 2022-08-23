@@ -75,8 +75,10 @@ public class Registration extends BasePage {
         Random random = new Random();
         setTestRandomEmail("test" + String.valueOf(random.nextInt(1000000000)) + "@test.com");
         System.out.println(getTestRandomEmail());
+        Waiters.treadWaiter(5);
         fillFields("FistName", "MiddleName", "SurName", getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION, UserCredentials.PASSWORD_FOR_REGISTRATION);
         scrollAndClickToElementJS(conditionsCheckBox);
+        Waiters.treadWaiter(5);
     }
 
     public void fillFields(String firstName, String middleName, String surName, String email, String password, String confirmationPassword) {

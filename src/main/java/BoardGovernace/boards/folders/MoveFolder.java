@@ -36,7 +36,7 @@ public class MoveFolder extends Folder {
 
 
     public boolean checkFolder() {
-        openPage(Links.PRE_PROD_TEST_BOARD_URL);
+        openPage(Links.STAGE_TEST_BOARD_URL);
         openFolder("FolderToMoveFile");
         return checkFolderInList("FolderForMoveFile");
     }

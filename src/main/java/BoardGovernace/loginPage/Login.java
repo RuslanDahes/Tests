@@ -23,6 +23,8 @@ public class Login extends BasePage {
     List<WebElement> loginError;
     @FindBy(className = "user-details")
     public WebElement userProfileAvatar;
+    @FindBy(xpath = "//span[contains(text(),'Log ind med mail og pasword')]")
+    public WebElement loginWithEmailOption;
 
 
     public List<WebElement> getLoginError() {
@@ -49,6 +51,7 @@ public class Login extends BasePage {
 
     public void loginUser(String email, String password) {
         openPage(Links.LOGIN_URL);
+        action.click(loginWithEmailOption);
         action.sendKeys(emailField, email);
         action.sendKeys(passwordField, password);
         action.click(loginButton);

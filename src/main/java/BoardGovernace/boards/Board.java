@@ -22,7 +22,7 @@ public class Board extends BasePage {
 
     public void openBoard() {
         action.waitForVisible(userProfileAvatar);
-        driver.get(Links.PRE_PROD_TEST_BOARD_URL);
+        driver.get(Links.STAGE_TEST_BOARD_URL);
         action.waitForPageLoaded();
         Waiters.treadWaiter(3);
 //        action.waitForVisible(verticalDotsList);

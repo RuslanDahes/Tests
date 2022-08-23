@@ -58,10 +58,12 @@ public class RegistrationTest extends BaseTest {
     @Test (priority = 2)
     public void createFreeAccount() {
         Registration registration = new Registration(getDriver());
+        Login login = new Login(getDriver());
         registration.openPage("/en/opret-bruger/");
         Waiters.treadWaiter(1);
         registration.createAccount(registration.freeTariffReadMoreButton);
-//        login.loginUser(registration.getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
+        Waiters.treadWaiter(5);
+        login.loginUser(registration.getTestRandomEmail(), UserCredentials.PASSWORD_FOR_REGISTRATION);
 //        Waiters.treadWaiter(10);
     }
 

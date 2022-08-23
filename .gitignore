@@ -2,4 +2,7 @@
 /.gradle
 /.idea/workspace.xml
 /.idea/vcs.xml
-!/.idea
+/.idea
+/build
+/out
+

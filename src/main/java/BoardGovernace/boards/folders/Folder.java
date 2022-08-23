@@ -18,7 +18,7 @@ public class Folder extends Board {
     List<WebElement> folderNameField;
     @FindBy(xpath = "//*[@id=\"ngdialog1\"]/div[2]/form/div/button[2]")
     WebElement saveFolderButton;
-    public  @FindBy (xpath = "//*[@ng-if='error.messageKey']")
+    public  @FindBy (xpath = "//span[contains(text(),'Please enter a name')]")
     WebElement errorText;
 //    @FindBy(linkText = "Please enter a name")
 //    WebElement errorText;
